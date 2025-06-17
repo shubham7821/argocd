@@ -1,21 +1,22 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: snaphomz_waitlist
+  name: snaphomz-waitlist
   labels:
-    app: snaphomz_waitlist
+    app: snaphomz-waitlist
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: snaphomz_waitlist
+      app: snaphomz-waitlist
   template:
     metadata:
       labels:
-        app: snaphomz_waitlist
+        app: snaphomz-waitlist
     spec:
       containers:
-      - name: snaphomz
+      - name: snaphomz-waitlist
         image: obi77/snaphomz_waitlist:latest
         ports:
         - containerPort: 8000
+        imagePullPolicy: Always

@@ -1,12 +1,12 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: snaphomz_waitlist
+  name: snaphomz-waitlist
 spec:
   selector:
-    app: snaphomz_waitlist
+    app: snaphomz-waitlist
   type: NodePort
   ports:
-  - port: 8000
-    targetPort: 8000
-    nodePort: 32083  # 32083 is arbitrary; just needs to be > 30000 and < 32767
+    - port: 8000
+      targetPort: 8000
+      nodePort: 32083

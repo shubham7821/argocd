@@ -7,6 +7,6 @@ spec:
     app: snaphomz-waitlist
   type: NodePort
   ports:
-    - port: 8000
-      targetPort: 8000
+    - port: 8002
+      targetPort: 8002
       nodePort: 32083

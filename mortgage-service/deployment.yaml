@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mortgage-service
+  labels:
+    app: mortgage-service
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: mortgage-service
+  template:
+    metadata:
+      labels:
+        app: mortgage-service
+    spec:
+      containers:
+      - name: mortgage-service
+        image: obi77/mortgage-service:latest
+        ports:
+        - containerPort: 4001

@@ -1,21 +1,12 @@
-apiVersion: apps/v1
-kind: Deployment
+apiVersion: v1
+kind: Service
 metadata:
   name: auth-service
-  labels:
-    app: auth-service
 spec:
-  replicas: 1
   selector:
-    matchLabels:
-      app: auth-service
-  template:
-    metadata:
-      labels:
-        app: auth-service
-    spec:
-      containers:
-      - name: auth-service
-        image: obi77/auth-service:latest
-        ports:
-        - containerPort: 4000
+    app: auth-service
+  type: LoadBalancer
+  ports:
+    - port: 80
+      targetPort: 4000
+      nodePort: 32084  # 32084 is arbitrary; just needs to be > 30000 and < 32767

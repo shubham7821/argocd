@@ -1,18 +1,18 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: snaphomz
+  name: snaphomz_waitlist
   labels:
-    app: snaphomz
+    app: snaphomz_waitlist
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: snaphomz
+      app: snaphomz_waitlist
   template:
     metadata:
       labels:
-        app: snaphomz
+        app: snaphomz_waitlist
     spec:
       containers:
       - name: snaphomz

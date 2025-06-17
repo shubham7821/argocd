@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: snaphomz
+  labels:
+    app: snaphomz
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: snaphomz
+  template:
+    metadata:
+      labels:
+        app: snaphomz
+    spec:
+      containers:
+      - name: snaphomz
+        image: obi77/snaphomz:latest
+        ports:
+        - containerPort: 8001

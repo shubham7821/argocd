@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: mortgage-modular-service
+  labels:
+    app: mortgage-modular
+spec:
+  selector:
+    app: mortgage-modular
+  ports:
+  - port: 8000
+    targetPort: 8000
+    nodePort: 32089  # 32089 is arbitrary; just needs to be > 30000 and < 32767

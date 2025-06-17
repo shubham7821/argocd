@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mortgage-modular
+  labels:
+    app: mortgage-modular
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: mortgage-modular
+  template:
+    metadata:
+      labels:
+        app: mortgage-modular
+    spec:
+      containers:
+      - name: mortgage-modular
+        image: obi77/mortgage-modular:latest
+        ports:
+        - containerPort: 8000

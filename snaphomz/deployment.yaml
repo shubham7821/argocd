@@ -16,6 +16,6 @@ spec:
     spec:
       containers:
       - name: snaphomz
-        image: obi77/snaphomz:latest
+        image: obi77/snaphomz:2025.06.14-11
         ports:
         - containerPort: 8001

@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: agent-frontend
+  labels:
+    app: agent-frontend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: agent-frontend
+  template:
+    metadata:
+      labels:
+        app: agent-frontend
+    spec:
+      containers:
+      - name: agent-frontend
+        image: obi77/agent-frontend:latest
+        ports:
+        - containerPort: 3000

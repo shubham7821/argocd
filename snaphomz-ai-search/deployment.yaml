@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: snaphomz-ai-search
+  labels:
+    app: snaphomz-ai-search
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: snaphomz-ai-search
+  template:
+    metadata:
+      labels:
+        app: snaphomz-ai-search
+    spec:
+      containers:
+        - name: snaphomz-ai-search
+          image: obi77/snaphomz_ai_search_without_rag:latest
+          ports:
+            - containerPort: 9000

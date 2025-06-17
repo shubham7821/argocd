@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: snaphomz
-        image: obi77/snaphomz_waitlist:latest
+        image: obi77/snaphomz:latest
         imagePullPolicy: Always
         ports:
-        - containerPort: 8000
+        - containerPort: 8001

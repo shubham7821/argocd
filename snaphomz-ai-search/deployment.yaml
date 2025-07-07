@@ -19,3 +19,16 @@ spec:
           image: obi77/snaphomz_ai_search_without_rag:latest
           ports:
             - containerPort: 9000
+          envFrom:
+            - configMapRef:
+                name: dotenv-config  # If you want to load from a ConfigMap (optional)
+          volumeMounts:
+            - name: env-volume
+              mountPath: /app/.env  # Path inside the container where .env will be mounted
+              subPath: .env  # Ensures only the .env file is mounted, not the entire directory
+              readOnly: true  # Make the file read-only
+      volumes:
+        - name: env-volume
+          hostPath:
+            path: /home/ec2-user/prod/ai/.env  # Path on your EC2 machine
+            type: File  # Make sure the volume is of type 'File' to mount a single file

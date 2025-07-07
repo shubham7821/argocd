@@ -19,3 +19,15 @@ spec:
         image: obi77/communication-service:latest
         ports:
         - containerPort: 4002
+        env:
+        - name: DOTENV_PATH
+          value: "/app/.env"
+        volumeMounts:
+        - name: env-volume
+          mountPath: /app/.env
+          subPath: .env
+      volumes:
+      - name: env-volume
+        hostPath:
+          path: /home/ubuntu/prod/communication/.env
+          type: File

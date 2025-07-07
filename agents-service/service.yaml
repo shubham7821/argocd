@@ -7,6 +7,6 @@ spec:
     app: agents-service
   type: LoadBalancer
   ports:
-    - port: 80
+    - port: 4003
       targetPort: 4003
       nodePort: 32085  # 32085 is arbitrary; just needs to be > 30000 and < 32767

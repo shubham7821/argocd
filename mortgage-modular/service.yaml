@@ -7,7 +7,8 @@ metadata:
 spec:
   selector:
     app: mortgage-modular
+  type: NodePort  # This line is required when using nodePort
   ports:
-  - port: 8000
-    targetPort: 8000
-    nodePort: 32089  # 32089 is arbitrary; just needs to be > 30000 and < 32767
+    - port: 8000
+      targetPort: 8000
+      nodePort: 32089  # Must be between 30000–32767

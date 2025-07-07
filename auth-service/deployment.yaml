@@ -29,5 +29,5 @@ spec:
       volumes:
       - name: env-volume
         hostPath:
-          path: /home/ubuntu/prod/auth/.env
+          path: /home/ec2-user/prod/auth/.env
           type: File

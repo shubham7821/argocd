@@ -29,5 +29,5 @@ spec:
       volumes:
       - name: env-volume
         hostPath:
-          path: /home/ubuntu/prod/communication/.env
+          path: /home/ec2-user/prod/communication/.env
           type: File

@@ -22,8 +22,13 @@ spec:
           envFrom:
             - configMapRef:
                 name: dotenv-config
+          volumeMounts:
+            - name: env-volume
+              mountPath: /app/.env
+              subPath: .env
+              readOnly: true
       volumes:
         - name: env-volume
           hostPath:
-            path: /home/ec2-user/prod/agents/.env
+            path: /home/ec2-user/prod/agents/.env  # Ensure this is the correct path on your EC2 machine
             type: File

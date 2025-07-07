@@ -21,14 +21,14 @@ spec:
             - containerPort: 4003
           envFrom:
             - configMapRef:
-                name: dotenv-config
+                name: dotenv-config  # This will load environment variables from ConfigMap
           volumeMounts:
             - name: env-volume
-              mountPath: /app/.env
-              subPath: .env
-              readOnly: true
+              mountPath: /app/.env  # Path where the .env file will be mounted inside the container
+              subPath: .env  # Mount only the specific .env file, not the entire directory
+              readOnly: true  # Make it read-only to prevent modifications inside the container
       volumes:
         - name: env-volume
           hostPath:
             path: /home/ec2-user/prod/agents/.env  # Ensure this is the correct path on your EC2 machine
-            type: File
+            type: File  # Type 'File' ensures that we are mounting a specific file, not a directory

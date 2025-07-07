@@ -26,6 +26,7 @@ spec:
             - name: env-volume
               mountPath: /app/.env
               subPath: .env
+              readOnly: true
       volumes:
         - name: env-volume
           hostPath:

@@ -1,12 +1,15 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: agent-frontend
+  name: agent-frontend-service
+  labels:
+    app: agent-frontend
 spec:
+  type: LoadBalancer
   selector:
     app: agent-frontend
-  type: LoadBalancer
   ports:
-    - port: 80
-      targetPort: 3000
-      nodePort: 32082  # 32082 is arbitrary; just needs to be > 30000 and < 32767
+    - protocol: TCP
+      port: 3000         # Externally exposed port
+      targetPort: 3000   # Port your container listens on
+  

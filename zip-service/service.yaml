@@ -9,4 +9,4 @@ spec:
   ports:
     - port: 5050
       targetPort: 5050
-      nodePort: 32087  # 32087 is arbitrary; just needs to be > 30000 and < 32767
+      nodePort: 32090  # 32087 is arbitrary; just needs to be > 30000 and < 32767

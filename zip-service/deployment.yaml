@@ -28,6 +28,5 @@ spec:
           subPath: .env
       volumes:
       - name: env-volume
-        hostPath:
-          path: /home/ec2-user/prod/zip-form/.env
-          type: File
+        secret:
+          secretName: zipform-env

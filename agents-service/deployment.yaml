@@ -20,5 +20,5 @@ spec:
           ports:
             - containerPort: 4003
           envFrom:
-            - configMapRef:
-                name: agents-env  # Use the correct ConfigMap name
+            - secretRef:
+                name: agents  # This matches the name you used in the kubectl create secret command

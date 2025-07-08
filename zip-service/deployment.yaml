@@ -19,14 +19,6 @@ spec:
         image: obi77/zip-service:latest
         ports:
         - containerPort: 5050
-        env:
-        - name: DOTENV_PATH
-          value: "/app/.env"
-        volumeMounts:
-        - name: env-volume
-          mountPath: /app/.env
-          subPath: .env
-      volumes:
-      - name: env-volume
-        secret:
-          secretName: zipform-env
+        envFrom:
+        - secretRef:
+            name: zipform-env

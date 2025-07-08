@@ -8,3 +8,5 @@ spec:
   resources:
     requests:
       storage: 5Gi
+  volumeName: npm-pv             # <-- must match PV name
+  storageClassName: ""           # <-- disable dynamic provisioning

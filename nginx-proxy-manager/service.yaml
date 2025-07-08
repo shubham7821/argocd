@@ -9,10 +9,10 @@ spec:
   ports:
     - port: 80
       targetPort: 80
-      nodePort: 30080
+      nodePort: 30095
     - port: 81
       targetPort: 81
-      nodePort: 30081
+      nodePort: 30096
     - port: 443
       targetPort: 443
       nodePort: 30443

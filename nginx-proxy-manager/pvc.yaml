@@ -2,15 +2,15 @@ apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
   name: npm-data
-  namespace: default  # Change this if you're deploying in another namespace
+  namespace: default
 spec:
   accessModes:
     - ReadWriteOnce
   resources:
     requests:
       storage: 2Gi
-  storageClassName: ""  # Use default StorageClass
-
+  storageClassName: standard  # Uncomment and set if you have a known storage class
+  # Leave out storageClassName to use the default
 ---
 apiVersion: v1
 kind: PersistentVolumeClaim
@@ -23,4 +23,4 @@ spec:
   resources:
     requests:
       storage: 1Gi
-  storageClassName: ""  # Use default StorageClass
+  storageClassName: standard

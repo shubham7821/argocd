@@ -5,7 +5,8 @@ metadata:
 spec:
   selector:
     app: snaphomz-ai-search
+  type: NodePort
   ports:
     - port: 9000
       targetPort: 9000
-      nodePort: 32088  # 32088 is arbitrary; just needs to be > 30000 and < 32767
+      nodePort: 32088  # Must be in range 30000-32767

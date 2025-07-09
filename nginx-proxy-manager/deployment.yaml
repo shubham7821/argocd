@@ -2,6 +2,8 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: nginx-proxy-manager
+  labels:
+    app: nginx-proxy-manager
 spec:
   replicas: 1
   selector:
@@ -22,7 +24,12 @@ spec:
           volumeMounts:
             - name: npm-storage
               mountPath: /data
+            - name: letsencrypt
+              mountPath: /etc/letsencrypt
       volumes:
         - name: npm-storage
           persistentVolumeClaim:
             claimName: npm-data
+        - name: letsencrypt
+          persistentVolumeClaim:
+            claimName: npm-letsencrypt

@@ -7,6 +7,15 @@ spec:
     - ReadWriteOnce
   resources:
     requests:
-      storage: 5Gi
-  volumeName: npm-pv             # <-- must match PV name
-  storageClassName: ""           # <-- disable dynamic provisioning
+      storage: 2Gi
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: npm-letsencrypt
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 1Gi

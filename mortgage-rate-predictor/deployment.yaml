@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mortgage-rate-predictor
+  labels:
+    app: mortgage-rate-predictor
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: mortgage-rate-predictor
+  template:
+    metadata:
+      labels:
+        app: mortgage-rate-predictor
+    spec:
+      containers:
+      - name: mortgage-rate-predictor
+        image: obi77/mortgage-rate-predictor:latest
+        ports:
+        - containerPort: 8088  # change if your app runs on a different port

@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: mortgage-service
+spec:
+  selector:
+    app: mortgage-service
+  type: LoadBalancer
+  ports:
+    - port: 8088          # External port exposed by the LoadBalancer
+      targetPort: 8088    # Must match the containerPort in Deployment
+      nodePort: 32092     # Optional (only used if type: NodePort or LoadBalancer with nodePort); must be 30000-32767

@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: grafana
+  namespace: monitoring
+  labels:
+    app: grafana
+spec:
+  type: NodePort   # Change to LoadBalancer if using cloud or ClusterIP if using Ingress
+  ports:
+    - port: 3000
+      targetPort: 3000
+      nodePort: 32000  # Access via <NodeIP>:32000
+  selector:
+    app: grafana

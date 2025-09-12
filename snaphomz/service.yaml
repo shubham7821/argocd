@@ -5,8 +5,10 @@ metadata:
 spec:
   selector:
     app: snaphomz
-  type: LoadBalancer   
+  type: LoadBalancer
   ports:
-  - port: 8001
-    targetPort: 8001
-    nodePort: 32081  # 32081 is arbitrary; just needs to be > 30000 and < 32767
+    - port: 8001        # Port exposed on the LoadBalancer
+      targetPort: 8001  # Port on your Pod
+      nodePort: 32081   # Optional, only used if type: NodePort or LoadBalancer
+      protocol: TCP
+      name: http    # Name of the port            

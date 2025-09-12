@@ -5,7 +5,7 @@ metadata:
 spec:
   selector:
     app: snaphomz
-  type: NodePort
+  type: LoadBalancer   
   ports:
   - port: 8001
     targetPort: 8001

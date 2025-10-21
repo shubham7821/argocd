@@ -15,8 +15,8 @@ spec:
         app: snaphomz-ai-search
     spec:
       containers:
-        - name: snaphomz-ai-search
-          image: obi77/snaphomz_ai_search_without_rag:latest
+        - name: ai-demo-snaphomz
+        image: 075502422618.dkr.ecr.us-west-1.amazonaws.com/ai-demo-snaphomz:latest
           ports:
             - containerPort: 9000
           envFrom:

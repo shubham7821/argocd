@@ -13,7 +13,7 @@ spec:
     metadata:
       labels:
         app: zip-service
-     spec:
+    spec:
       containers:
       - name: zip-service
         image: 075502422618.dkr.ecr.us-west-1.amazonaws.com/demo/zip-service:latest

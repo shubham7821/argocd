@@ -18,7 +18,7 @@ spec:
       - name: agents-service
         image: 075502422618.dkr.ecr.us-west-1.amazonaws.com/demo/agents-service:latest
         ports:
-        - containerPort: 4000
+        - containerPort: 4003
         env:
         - name: DOTENV_PATH
           value: "/app/.env"

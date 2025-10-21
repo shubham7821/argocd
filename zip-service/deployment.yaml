@@ -13,12 +13,14 @@ spec:
     metadata:
       labels:
         app: zip-service
-    spec:
+     spec:
       containers:
       - name: zip-service
-        image: obi77/zip-service:latest
+        image: 075502422618.dkr.ecr.us-west-1.amazonaws.com/demo/zip-service:latest
         ports:
         - containerPort: 5050
         envFrom:
         - secretRef:
-            name: zipform-env
+            name: zip-env
+      imagePullSecrets:
+      - name: ecr-secret

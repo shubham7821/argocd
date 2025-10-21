@@ -16,19 +16,6 @@ spec:
     spec:
       containers:
       - name: agent-frontend
-        image: 075502422618.dkr.ecr.us-west-1.amazonaws.com/demo/agents-service:latest
+        image: obi77/agent-frontend:latest
         ports:
         - containerPort: 3000
-        env:
-        - name: DOTENV_PATH
-          value: "/app/.env"
-        volumeMounts:
-        - name: env-volume
-          mountPath: /app/.env
-          subPath: .env
-      volumes:
-      - name: env-volume
-        secret:
-          secretName: agent-env
-      imagePullSecrets:
-      - name: ecr-secret

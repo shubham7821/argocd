@@ -16,9 +16,11 @@ spec:
     spec:
       containers:
       - name: mortgage-service
-        image: obi77/mortgage-service:latest
+        image: 075502422618.dkr.ecr.us-west-1.amazonaws.com/demo/mortgage-service:latest
         ports:
         - containerPort: 4001
         envFrom:
         - secretRef:
             name: mortgage-env
+      imagePullSecrets:
+      - name: ecr-secret

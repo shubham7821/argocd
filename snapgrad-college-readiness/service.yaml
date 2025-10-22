@@ -1,10 +1,10 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: snapgrad-college-readiness
+  name: snapgrad-service
 spec:
   selector:
-    app: snapgrad-college-readiness
+    app: snapgrad-service
   type: NodePort
   ports:
     - port: 5000        # Cluster-internal port

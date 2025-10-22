@@ -1,14 +1,14 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: snaphomz
+  name: snapgrad_college_readiness
 spec:
   selector:
-    app: snaphomz
-  type: LoadBalancer
+    app: snapgrad_college_readiness
+  type: NodePort
   ports:
-    - port: 8001        # Port exposed on the LoadBalancer
-      targetPort: 8001  # Port on your Pod
-      nodePort: 32081   # Optional, only used if type: NodePort or LoadBalancer
+    - port: 5000        # Cluster-internal port
+      targetPort: 5000  # Pod container port
+      nodePort: 32061   # NodePort (access from outside using NodeIP:32061)
       protocol: TCP
-      name: http    # Name of the port            
+      name: http           

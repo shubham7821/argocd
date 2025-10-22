@@ -15,7 +15,10 @@ spec:
         app: mortgage-modular
     spec:
       containers:
-      - name: mortgage-modular
-        image: obi77/mortgage-modular:latest
-        ports:
-        - containerPort: 8000
+        - name: mortgage-demo-snaphomz
+          image: 075502422618.dkr.ecr.us-west-1.amazonaws.com/mortgage-demo-snaphomz:latest
+          ports:
+            - containerPort: 8000
+          envFrom:
+            - secretRef:
+                name: mortgage-frontend-env 

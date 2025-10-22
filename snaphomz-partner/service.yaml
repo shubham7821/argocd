@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: partner-app
+spec:
+  selector:
+    app: partner-app
+  type: LoadBalancer
+  ports:
+    - port: 3004
+      targetPort: 3004
+      nodePort: 32070  # 32084 is arbitrary; just needs to be > 30000 and < 32767

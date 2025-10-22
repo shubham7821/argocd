@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: partner-app
+  labels:
+    app: partner-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: partner-app
+  template:
+    metadata:
+      labels:
+        app: partner-app
+    spec:
+      containers:
+      - name: partner-demo-snaphomz
+        image: 075502422618.dkr.ecr.us-west-1.amazonaws.com/partner-demo-snaphomz:latest
+        ports:
+        - containerPort: 3004
+        envFrom:
+        - secretRef:
+            name: partner-env
+      imagePullSecrets:
+      - name: ecr-secret

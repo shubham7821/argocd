@@ -15,7 +15,11 @@ spec:
         app: agent-frontend
     spec:
       containers:
-      - name: agent-demo-snaphomz
-        image: 075502422618.dkr.ecr.us-west-1.amazonaws.com/agent-demo-snaphomz:latest
-        ports:
-        - containerPort: 3000
+        - name: agent-demo-snaphomz
+          image: 075502422618.dkr.ecr.us-west-1.amazonaws.com/agent-demo-snaphomz:latest
+          ports:
+            - containerPort: 3000
+          envfrom:
+            - secretref:
+                name: agent-frontend-env 
+                

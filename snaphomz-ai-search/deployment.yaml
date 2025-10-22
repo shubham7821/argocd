@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: ai-demo-snaphomz
-        image: 075502422618.dkr.ecr.us-west-1.amazonaws.com/ai-demo-snaphomz:latest
+          image: 075502422618.dkr.ecr.us-west-1.amazonaws.com/ai-demo-snaphomz:latest
           ports:
             - containerPort: 9000
           envFrom:

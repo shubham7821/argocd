@@ -1,18 +1,18 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: snapgrad_college_readiness
+  name: snapgrad-college-readiness
   labels:
-    app: snapgrad_college_readiness
+    app: snapgrad-college-readiness
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: snapgrad_college_readiness
+      app: snapgrad-college-readiness
   template:
     metadata:
       labels:
-        app: snapgrad_college_readiness
+        app: snapgrad-college-readiness
     spec:
       containers:
         - name: snapgrad_college_readiness-demo-snaphomz

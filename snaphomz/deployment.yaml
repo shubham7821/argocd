@@ -15,8 +15,11 @@ spec:
         app: snaphomz
     spec:
       containers:
-      - name: snaphomz
-        image: obi77/snaphomz:latest
-        imagePullPolicy: Always
-        ports:
-        - containerPort: 8001
+        - name: frontend-demo-snaphomz
+          image: 075502422618.dkr.ecr.us-west-1.amazonaws.com/frontend-demo-snaphomz:latest
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 8001
+          envFrom:
+            - secretRef:
+                name: snaphomz-frontend-env

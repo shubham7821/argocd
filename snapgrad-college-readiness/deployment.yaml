@@ -1,22 +1,22 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: snapgrad-college-readiness
+  name: snapgrad-service
   labels:
-    app: snapgrad-college-readiness
+    app: snapgrad-service
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: snapgrad-college-readiness
+      app: snapgrad-service
   template:
     metadata:
       labels:
-        app: snapgrad-college-readiness
+        app: snapgrad-service
     spec:
       containers:
-        - name: snapgrad_college_readiness-demo-snaphomz
-          image: 075502422618.dkr.ecr.us-west-1.amazonaws.com/snapgrad_college_readiness-demo-snaphomz:latest
+        - name: snapgrad-demo-snaphomz
+          image: 075502422618.dkr.ecr.us-west-1.amazonaws.com/snapgrad-demo-snaphomz:latest
           ports:
             - containerPort: 5000
           envFrom:

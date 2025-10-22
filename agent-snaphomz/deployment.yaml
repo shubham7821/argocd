@@ -15,7 +15,7 @@ spec:
         app: agent-frontend
     spec:
       containers:
-      - name: agent-frontend
-        image: obi77/agent-frontend:latest
+      - name: agent-demo-snaphomz
+        image: 075502422618.dkr.ecr.us-west-1.amazonaws.com/agent-demo-snaphomz:latest
         ports:
         - containerPort: 3000

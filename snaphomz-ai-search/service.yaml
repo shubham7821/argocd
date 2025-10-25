@@ -5,8 +5,8 @@ metadata:
 spec:
   selector:
     app: snaphomz-ai-search
-  type: NodePort
+  type: ClusterIP
   ports:
     - port: 9000
       targetPort: 9000
-      nodePort: 32088  # Must be in range 30000-32767
+      protocol: TCP

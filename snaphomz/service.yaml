@@ -5,10 +5,9 @@ metadata:
 spec:
   selector:
     app: snaphomz
-  type: LoadBalancer
+  type: ClusterIP
   ports:
-    - port: 8001        # Port exposed on the LoadBalancer
+    - port: 8001        
       targetPort: 8001  # Port on your Pod
-      nodePort: 32081   # Optional, only used if type: NodePort or LoadBalancer
       protocol: TCP
-      name: http    # Name of the port            
+               

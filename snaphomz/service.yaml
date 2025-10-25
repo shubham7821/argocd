@@ -5,9 +5,8 @@ metadata:
 spec:
   selector:
     app: snaphomz
-  type: NodePort
+  type: ClusterIP
   ports:
     - port: 8001          # Service port (used inside cluster)
       targetPort: 8001    # Container port inside pod
-      nodePort: 30081     # External port (browser will access this)
       protocol: TCP

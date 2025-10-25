@@ -5,9 +5,9 @@ metadata:
 spec:
   selector:
     app: communication-service
-  type: LoadBalancer
+  type: ClusterIP
   ports:
     - port: 4002
       targetPort: 4002
-      nodePort: 32086  # 32086 is arbitrary; just needs to be > 30000 and < 32767
+      protocol: TCP
 ---

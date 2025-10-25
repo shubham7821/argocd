@@ -5,8 +5,8 @@ metadata:
 spec:
   selector:
     app: partner-app
-  type: LoadBalancer
+  type: ClusterIP
   ports:
     - port: 3004
       targetPort: 3004
-      nodePort: 32070  # 32084 is arbitrary; just needs to be > 30000 and < 32767
+      protocol: TCP

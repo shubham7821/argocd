@@ -5,10 +5,9 @@ metadata:
 spec:
   selector:
     app: snapgrad-service
-  type: NodePort
+  type: ClusterIP
   ports:
-    - port: 5000        # Cluster-internal port
-      targetPort: 5000  # Pod container port
-      nodePort: 32061   # NodePort (access from outside using NodeIP:32061)
+    - port: 5000        
+      targetPort: 5000  
       protocol: TCP
-      name: http           
+          

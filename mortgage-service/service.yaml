@@ -5,9 +5,9 @@ metadata:
 spec:
   selector:
     app: mortgage-service
-  type: LoadBalancer
+  type: ClusterIP
   ports:
     - port: 4001
       targetPort: 4001
-      nodePort: 32087  # 32086 is arbitrary; just needs to be > 30000 and < 32767
+      protocol: TCP
 ---

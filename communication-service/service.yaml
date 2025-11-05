@@ -5,7 +5,7 @@ metadata:
 spec:
   selector:
     app: communication-service
-  type: ClusterIP
+  type: LoadBalancer
   ports:
     - port: 4002
       targetPort: 4002

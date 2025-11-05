@@ -5,7 +5,7 @@ metadata:
 spec:
   selector:
     app: mortgage-service
-  type: ClusterIP
+  type: LoadBalancer
   ports:
     - port: 4001
       targetPort: 4001
